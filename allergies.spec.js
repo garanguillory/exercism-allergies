@@ -12,12 +12,12 @@ describe('Allergies',function() {
     expect(allergies.list()).toEqual([ 'eggs' ]);
   });
 
-  xit('allergies to peanuts', function() {
+  it('allergies to peanuts', function() {
     var allergies = new Allergies(2);
     expect(allergies.list()).toEqual([ 'peanuts' ]);
   });
 
-  xit('allergies to strawberries', function() {
+  it('allergies to strawberries', function() {
     var allergies = new Allergies(8);
     expect(allergies.list()).toEqual([ 'strawberries' ]);
   });
