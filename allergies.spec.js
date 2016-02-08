@@ -2,45 +2,47 @@ var Allergies = require('./allergies');
 
 describe('Allergies',function() {
 
-  it('no allergies at all', function() {
-    var allergies = new Allergies(0);
-    expect(allergies.list()).toEqual([]);
-  });
+// allergies.list() function
+    it('no allergies at all', function() {
+      var allergies = new Allergies(0);
+      expect(allergies.list()).toEqual([]);
+    });
 
-  it('allergies to eggs', function() {
-    var allergies = new Allergies(1);
-    expect(allergies.list()).toEqual([ 'eggs' ]);
-  });
+    it('allergies to eggs', function() {
+      var allergies = new Allergies(1);
+      expect(allergies.list()).toEqual([ 'eggs' ]);
+    });
 
-  it('allergies to peanuts', function() {
-    var allergies = new Allergies(2);
-    expect(allergies.list()).toEqual([ 'peanuts' ]);
-  });
+    it('allergies to peanuts', function() {
+      var allergies = new Allergies(2);
+      expect(allergies.list()).toEqual([ 'peanuts' ]);
+    });
 
-  it('allergies to strawberries', function() {
-    var allergies = new Allergies(8);
-    expect(allergies.list()).toEqual([ 'strawberries' ]);
-  });
+    it('allergies to strawberries', function() {
+      var allergies = new Allergies(8);
+      expect(allergies.list()).toEqual([ 'strawberries' ]);
+    });
 
-  xit('allergies to eggs and peanuts', function() {
-    var allergies = new Allergies(3);
-    expect(allergies.list()).toEqual([ 'eggs', 'peanuts' ]);
-  });
+    it('allergies to eggs and peanuts', function() {
+      var allergies = new Allergies(3);
+      expect(allergies.list()).toEqual([ 'eggs', 'peanuts' ]);
+    });
 
-  xit('allergies to more than eggs but not peanuts', function() {
-    var allergies = new Allergies(5);
-    expect(allergies.list()).toEqual([ 'eggs', 'shellfish' ]);
-  });
+    it('allergies to more than eggs but not peanuts', function() {
+      var allergies = new Allergies(5);
+      expect(allergies.list()).toEqual([ 'eggs', 'shellfish' ]);
+    });
 
-  xit('allergic to lots of stuff', function() {
-    var allergies = new Allergies(248);
-    expect(allergies.list()).toEqual(['strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']);
-  });
+    it('allergic to lots of stuff', function() {
+      var allergies = new Allergies(248);
+      expect(allergies.list()).toEqual(['strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']);
+    });
 
-  xit('allergic to everything', function() {
-    var allergies = new Allergies(255);
-    expect(allergies.list()).toEqual(['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']);
-  });
+    it('allergic to everything', function() {
+      var allergies = new Allergies(255);
+      expect(allergies.list()).toEqual(['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']);
+    });
+  // end allergies.list() function  
 
   xit('no allergic means not allergic', function() {
     var allergies = new Allergies(0);
