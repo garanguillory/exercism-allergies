@@ -21,12 +21,12 @@ var Allergies = function(input){
 		};
 	var allergyArray = Object.keys(allergyObject);
 	var allergyNumberArray = [1,2,4,8,16,32,64,128];
-	var array = [];
 	var answerArray = [];
 
 
 	this.list = function(){
-
+		var array = [];
+		
 			for(var i=0; i<=input; i++){
 					if(allergyNumberArray[i] <= input){
 							array.push(allergyNumberArray[i])
@@ -45,7 +45,13 @@ var Allergies = function(input){
 						return this.list();
 					}
 				}
-			}
+		};
+	
+	this.allergicTo = function(stimulant){
+		var allergyList = this.list();
+			return (allergyList.indexOf(stimulant) != -1) ? true : false;
+		};
+
 	};
 
 

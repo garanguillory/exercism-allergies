@@ -19,29 +19,39 @@ var Allergies = function(input){
 
 	this.list = function(){
 
-// create an array that contains the allergy numbers up to and 
-// including the input number (the input could be one of the 
-// allergy numbers)
-			for(var i=0; i<=input; i++){
-					if(allergyNumberArray[i] <= input){
-							array.push(allergyNumberArray[i])
-					}
-			}
-		// if (input == 0 || input == 'undefined') { return []; }
-			if(input == 0 || input == 'undefined'){
-				return answerArray;
-			} else {
-				if(input - array[array.length-1] == 0){
-						answerArray.unshift(allergyObject[array.pop()]);
-						return answerArray;
-				} else {
-						// subtract last index of the array (greatest number)
-						input = input - array[array.length-1];
-						answerArray.unshift(allergyObject[array.pop()]);
-						return this.list();
-					}
+		// create an array that contains the allergy numbers up to and 
+		// including the input number (the input could be one of the 
+		// allergy numbers)
+				for(var i=0; i<=input; i++){
+						if(allergyNumberArray[i] <= input){
+								array.push(allergyNumberArray[i])
+						}
 				}
+			// if (input == 0 || input == 'undefined') { return []; }
+				if(input == 0 || input == 'undefined'){
+					return answerArray;
+				} else {
+					if(input - array[array.length-1] == 0){
+							answerArray.unshift(allergyObject[array.pop()]);
+							return answerArray;
+					} else {
+							// subtract last index of the array (greatest number)
+							input = input - array[array.length-1];
+							answerArray.unshift(allergyObject[array.pop()]);
+							return this.list();
+						}
+					}
 			}
+	
+	this.allergicTo = function(stimulant){
+		var allergyList = this.list();
+			if(allergyList.indexOf(stimulant) != -1){
+				return true;
+			} else {
+				return false;
+			}
+	};
+
 	};
 
 // scratch text
@@ -166,7 +176,7 @@ var last = array[array.length-1];
 // allergy numbers)
 	for(var i=0; i<=allergyNumberArray.length; i++){
 			if(allergyNumberArray[i] <= input){
-					array.push(allergyNumberArray[i])
+					array.push(allergyNumberArray[i]);
 			}
 	}
 // if (input - last == 0) // do something
