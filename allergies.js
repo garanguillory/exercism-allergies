@@ -19,14 +19,13 @@ var Allergies = function(input){
 			64: "pollen",
 			128: "cats"
 		};
-	var allergyArray = Object.keys(allergyObject);
 	var allergyNumberArray = [1,2,4,8,16,32,64,128];
 	var answerArray = [];
 
 
 	this.list = function(){
 		var array = [];
-		
+
 			for(var i=0; i<=input; i++){
 					if(allergyNumberArray[i] <= input){
 							array.push(allergyNumberArray[i])
